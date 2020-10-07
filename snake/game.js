@@ -14,14 +14,14 @@ var useNextRandomCoin =function(){
     }
     var idx = Math.floor(Math.random() * notusePixels.length);
     nowcoin =notusePixels.splice(idx ,1)[0].split("|");
-    $('div.pixel[data ="' + nowcoin[0] + '"] [data = " '+ nowcoin[1] + '"]').addClass('taken');
+    $('div.pixels[data-x="' + nowcoin[0] + '"][data-y= " '+ nowcoin[1] + '"]').addClass('taken');
     return true;
 }
 var findLocationPixel= function(x,y){
     var idx = notusePixels.indexOf(x+"|"+y);
     if( idx!= -1){
         notusePixels.splice(idx ,1 );
-        $('div.pixel[data ="' + x + '"] [data = " '+ y + '"]').addClass('taken');
+        $('div.pixels[data-x="' + x + '"][data-y="' + y + '"]').addClass('taken');
         return true ;
     }else {
         return false;
@@ -67,4 +67,11 @@ for (var i = 0; i < MonWidthInPixels; i++) {
 }
 
 restartGame();
-console.log(notusePixels.length);
+// $('div.pixels[data-x="0"][data-y= "0"]').addClass('taken');
+// console.log(notusePixels.length);
+$("#a").click(function(){
+    $('.test').addClass('test123');
+});
+$("#b").click(function(){
+    $(".test").removeClass('test123');
+})
