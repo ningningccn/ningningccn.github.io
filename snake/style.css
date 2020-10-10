@@ -1,11 +1,13 @@
 .mon {
     width: 400px;
     height: 400px;
+    position: relative;
     /* border: 1px solid black; */
     margin: 0 auto;/* 置中 */
     background-color: rgb(164, 249, 252);
 }
 .msg{
+    position: absolute;
     width: 400px;
     height: 400px;
     /* border: 1px solid blue; */
@@ -19,6 +21,11 @@
     margin: 0 auto;
     font-size: 30px;
     line-height: 90px;
+}
+.pixels {
+    width: 10px;
+    height: 10px;
+    float: left;
 }
 .pixels.taken{
     background-color: #000000;
