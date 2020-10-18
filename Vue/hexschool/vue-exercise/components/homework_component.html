@@ -134,8 +134,11 @@
   </select>
   <div>
     <h4>關注城市</h4>
-    <!-- <div class="card-columns">
-      <div class="card status-aqi2">
+    <div class="card-columns">
+      <card-columns-component v-for="(item,index) in follow" :card="item" :key="index" @truestar="clickstar"></card-columns-component>
+    </div>
+  </div>
+  <!-- <div class="card status-aqi2">
         <div class="card-header">苗栗縣 - 三義
           <a href="#" class="float-right"><i class="fas fa-star"></i></a>
         </div>
@@ -147,10 +150,11 @@
           </ul>
           2018-05-20 16:00
         </div>
-      </div>
-    </div> -->
-  </div>
-  
+      </div> -->
+
+
+  <!-- 關注地區結束 -->
+
   <hr>
   <!-- <div class="card-columns" >
     <div class="card status-aqi2">
@@ -168,14 +172,14 @@
     </div>
   </div> -->
   <div class="card-columns" >
-    <card-columns-component v-for="(item,index) in filterLocation" :card="item" :key="index"></card-columns-component>
+    <card-columns-component v-for="(item,index) in filterLocation" :card="item" :key="index" @truestar="clickstar"></card-columns-component>
   </div>
 </div>
 <script type="text/x-template" id="cardColumns">
 
 <div class="card" :class="backgroundColor"> 
   <div class="card-header"> {{ card.County }} -{{ card.SiteName }}
-    <a href="#" class="float-right"><i class="far fa-star"></i></a>
+    <a href="#" class="float-right" @click.prevent="addstar" ><i class="far fa-star"></i></a>
   </div>
   <div class="card-body">
     <ul class="list-unstyled">
@@ -193,7 +197,10 @@
     props:['card'],
     template:'#cardColumns',
     methods: {
-
+      addstar :function(){
+        this.$emit('truestar' ,this.card.SiteName);
+        console.log(this.card.SiteName ,'addstar')
+      }
     },
     computed: {
       backgroundColor: function() {
@@ -244,24 +251,47 @@ var app = new Vue({
 
       });
     },
+    clickstar:function(value) {
+      console.log(value , 'clickstar');
+      let index = this.stared.indexOf(value);
+      if(index === -1 ){
+        console.log('-1');
+        this.stared.push(value);
+        console.log(this.stared.length);
+      }else{
+        console.log('del');
+        this.stared.splice(index,1);
+      }
+    }
   },
   computed: {
     filterLocation: function() {
-      //const vm =this;
-      console.log (this.selectLocation );
+      const vm =this;
+      console.log(this.selectLocation);
       if(this.selectLocation ===''){
-        return this.data;
-      }else{
-        console.log(this.selectLocation ,'');
         return this.data.filter(function(item){
-          console.log(this.selectLocation ,'');
-          item.County === this.selectLocation;
+          return vm.stared.indexOf(item.SiteName)===-1
+        });
+      }else{
+        return this.data.filter(function(item){
+          if(item.County === vm.selectLocation){
+            return vm.stared.indexOf(item.SiteName)===-1
+          }
+
+
         })
       }
-
+    },
+    follow:function() {
+      const vm = this;
+      return vm.data.filter(function(item){
+        return vm.stared.indexOf(item.SiteName) > -1;
+      })
+      
       
     }
   },
+    
   created:function() {
     this.getData();
   }
