@@ -102,18 +102,23 @@
       <tr is="row-component" v-for="(item, key) in data" :item="item" :key="key"></tr>
     </tbody>
   </table>
-  {{ data[1].cash }}
+  {{ data[1].cash|dollarSign }}
 </div>
 
 <script type="text/x-template" id="row-component">
   <tr>
     <td>{{ item.name }}</td>
-    <td>{{ item.cash }}</td>
-    <td>{{ item.icash }}</td>
+    <td>{{ item.cash |dollarSign }}</td>
+    <td>{{ item.icash |dollarSign }}</td>
   </tr>
 </script>
 
 <script>
+Vue.filter('dollarSign',function(n){
+  return `$ ${n}`
+}) 
+
+
 var child = {
   props: ['item'],
   template: '#row-component',

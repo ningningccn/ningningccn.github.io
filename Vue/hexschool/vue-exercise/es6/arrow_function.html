@@ -106,16 +106,23 @@
 <script>
 // #1 改寫傳統函式
 // 將以下改寫成 Arrow Function，並嘗試縮寫形式
-var callSomeone = function (someone) {
-  return someone + '吃飯了'
-}
-console.log(callSomeone('小明'))
+// var callSomeone = function (someone) {
+//   return someone + '吃飯了'
+// }
+// var callSomeone = (someone) => {
+//   return someone +'eating';
+// }
+
+// var callSomeone = someone => someone +'eating ';
+
+// console.log(callSomeone('小明'))
 
 // # 沒有 arguments 參數
 // 將以下改寫成 Arrow Function，並觀察差異
 // const updateEasyCard = function () {
+//   const updateEasyCard = (...asg) =>{
 //   let cash = 0;
-//   console.log(arguments); // arguments is not defined
+//   console.log(asg); // arguments is not defined
 // }
 // updateEasyCard(10, 50, 100, 50, 5, 1, 1, 1, 500);
 

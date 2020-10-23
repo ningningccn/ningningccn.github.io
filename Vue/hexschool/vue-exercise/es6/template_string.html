@@ -127,7 +127,21 @@ let originUl = '<ul>\
   <li>我叫做 ' + people[2].name + '</li>\
 </ul>';
 
-console.log(originString, originUl);
+let newString = `我叫做 ${people[0].name}`
+let newUl =`
+  <ul>
+    <li>我叫做 ${people[0].name}</li>
+    <li>我叫做 ${people[1].name}</li>
+    <li>我叫做 ${people[2].name}</li>
+  </ul>
+`
+
+newUl = `
+  <ul>
+    ${people.map(person => `<li>我叫做 ${people[person.name]}</lu>`).join('')}
+  </ul>
+`
+console.log(newString ,newUl );
 
 </script> 
         </div>

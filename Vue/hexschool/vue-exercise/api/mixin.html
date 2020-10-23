@@ -115,14 +115,7 @@
 
 <script>
 // mixin 是多個混合的概念
-
-Vue.component('row-component', {
-  props: ['item'],
-  data: function() {
-    return {
-      data: {},
-    }
-  },
+var mixinsfilter={
   template: '#row-component',
   filters: {
     dollarSign: function (n) {
@@ -134,9 +127,36 @@ Vue.component('row-component', {
       });
     }
   },
+}
+var mixinsmounted= {
   mounted () {
     console.log('這段是 Mixin 產生')
   }
+}
+
+Vue.component('row-component', {
+  props: ['item'],
+  data: function() {
+    return {
+      data: {},
+    }
+  },
+  mixins:[mixinsfilter,mixinsmounted]
+  // template: '#row-component',
+  // filters: {
+  //   dollarSign: function (n) {
+  //     return `$ ${n}`
+  //   },
+  //   currency: function(n) {
+  //     return n.toFixed(2).replace(/./g, function(c, i, a) {
+  //         return i && c !== "." && ((a.length - i) % 3 === 0) ? ',' + c : c;
+  //     });
+  //   }
+  // },
+  // mounted () {
+  //   console.log('這段是 Mixin 產生')
+  // }
+
 });
 
 

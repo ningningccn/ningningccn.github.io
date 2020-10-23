@@ -135,7 +135,9 @@
   <div>
     <h4>關注城市</h4>
     <div class="card-columns">
-      <card-columns-component v-for="(item,index) in follow" :card="item" :key="index" @truestar="clickstar"></card-columns-component>
+      <card-columns-component v-for="(item,index) in follow" :card="item" :key="index" @truestar="clickstar">
+        <i class="fas fa-star" slot="staricon"></i>
+      </card-columns-component>
     </div>
   </div>
   <!-- <div class="card status-aqi2">
@@ -179,7 +181,11 @@
 
 <div class="card" :class="backgroundColor"> 
   <div class="card-header"> {{ card.County }} -{{ card.SiteName }}
-    <a href="#" class="float-right" @click.prevent="addstar" ><i class="far fa-star"></i></a>
+    <a href="#" class="float-right" @click.prevent="addstar" >
+      <slot name="staricon">
+        <i class="far fa-star"></i>
+      </slot>
+    </a>
   </div>
   <div class="card-body">
     <ul class="list-unstyled">
@@ -229,7 +235,7 @@ var app = new Vue({
   data: {
     data: [],
     location: [],
-    stared: [],
+    stared: JSON.parse(localStorage.getItem('starCity')) || [],
     selectLocation:'',
   },
   // 請在此撰寫 JavaScript
@@ -262,6 +268,7 @@ var app = new Vue({
         console.log('del');
         this.stared.splice(index,1);
       }
+      localStorage.setItem('starCity',JSON.stringify(this.stared))
     }
   },
   computed: {

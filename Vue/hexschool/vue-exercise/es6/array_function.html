@@ -118,35 +118,61 @@ const people = [
   {
     name: '杰倫',
     money: 60000
-  },
-  {
-    name: '老媽',
-    money: Infinity
   }
 ];
 
 // forEach 與 map
 // 將所有物件增加 icash 有多少金額的欄位
 
+// for (let i = 0; i<people.length;i++){
+//   console.log(people);
+// }
+// people.forEach(function(item ,index,array){
+//   item.icash = item.money +500 ;
+//   console.log(item);
+
+// });
+
+// const newpeople=people.map(function(item ,index,array){
+//   return {
+//     ...item,
+//     icash:item.money +500
+//   }
+// });
+// console.log(newpeople)
 
 // filter
 // 挑出金額少於 5000 的物件
+
+// const moneyfilter = people.filter(function(item){
+//     return item.money<5000;
+// })
+// console.log(moneyfilter)
+
 
 // find
 // 1. 找到金額 = 500 的物件
 // 2. 找到 > 5000 的物件
 
-// every
+// every  (所有結果都為true , return 才會是ture)
 // 1. 所有物件是否都超過 10000 元
 // 2. 是否所有物件超過 300 元
+// const ans = people.every(function(item , i ){
+//   return item.money >300 ;
+// }) 
 
-// some
+// some (部份或只有一個 為true , return 都會是ture)
 // 1. 是否有物件超過 10000 元
 // 2. 是否有物件持有金額少於 300元
-
+// const ans = people.every(function(item , i ){
+//   return item.money >300 ;
+// }) 
 // reduce
 // 去除掉老媽，請問剩下的人有多少錢？
-
+// prev = [0], item[1]
+const newNumber = people.reduce(function (prev,item,index){
+  return 
+},0)
 </script> 
         </div>
       </div>

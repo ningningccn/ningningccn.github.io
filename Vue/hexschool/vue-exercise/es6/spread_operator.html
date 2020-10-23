@@ -105,12 +105,16 @@
 
 <script>
 // #1 使用展開語法，合併以下陣列
-let groupA = ['小明', '杰倫', '阿姨'];
-let groupB = ['老媽', '老爸'];
+// let groupA = ['小明', '杰倫', '阿姨'];
+// let groupB = ['老媽', '老爸'];
+// let groupAll = groupA.concat(groupB); //js基本用法
+// let groupAll2= [...groupA,...groupB];
+
+//... = m 一個一個讀取陣列
 
 // #2 淺複製觀念說明 (shallow copy)
 // let groupA = ['小明', '杰倫', '阿姨'];
-// let groupB = groupA;
+// let groupB = groupA; [...groupA]新陣列
 // groupB.push('阿明');
 // console.log(groupA); // 請問此時的 groupA 值為何
 
