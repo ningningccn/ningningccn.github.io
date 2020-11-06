@@ -1,0 +1,356 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+
+.wrap {
+  max-width:1024px;
+  margin: auto;
+}
+
+.header {
+  background-color:black;
+  max-width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo a{
+  color: white;
+  font-size: 30px;
+  padding-left: 50px;
+  text-decoration:none;
+}
+.menu {
+  display: flex;
+}
+.menu li{
+  padding-right: 30px;
+  color: white;
+  font-size: 16px;
+}
+.banner {
+  width: 100%;
+  height: 420px;
+  background-image: url(../img/banner.jpeg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box {
+  width: 500px;
+  height: 150px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-align: center;
+}
+.slogan {
+  font-size: 30px;
+  margin-top: 30px;
+}
+.box h4{
+  margin-top: 20px;
+}
+.box h5{
+  margin-top: 10px;
+}
+.context {
+  background-color: rgb(240, 221, 221);
+  /* padding-bottom: 30px; */
+}
+.question{
+  max-width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 20px;
+}
+.question h2{
+  line-height: 1.5;
+  margin: 10px;
+}
+.question::before,
+.question::after {
+    flex-grow: 1;
+    max-width: 100px;
+    content: "";
+    border-top: 1px solid #3d1101;
+}
+.feature {
+  width: 100%;
+}
+.feature img {
+  max-width: 100%;
+  border-radius: 180px;
+}
+.feature ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  
+}
+.feature ul li {
+  width: 30.3333%;
+  margin: 20px 1.5%;
+}
+@media (max-width:568px){
+  .feature ul li {
+    width: 90%;
+    margin: 20px 5%;
+  }
+}
+
+.feature p {
+  margin-top: 10px;
+}
+.introduct {
+  background-color: rgb(43, 16, 16);
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
+}
+.introduct h2{
+  font-size: 26px;
+  font-weight: 1000;
+  color: rgb(215, 210, 210);
+}
+.introduct h3{
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: rgb(205, 194, 194);
+}
+.leftbox {
+  max-width: 45%;
+}
+.leftbox img {
+  border-radius: 100px;
+}
+.rightbox {
+  max-width: 45%;
+  line-height: 1.5;
+  color: rgb(159, 143, 143);
+  margin-top: 2%;
+  margin-left: 2%;
+}
+@media(max-width: 767px){
+  .leftbox {
+    max-width: 100%;
+  }
+  .rightbox {
+    max-width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  .introduct h2,h3,.introduct p{
+    text-align: center;
+  }
+
+}
+
+.booking h2{
+  text-align: center;
+  margin: 40px 0;
+  line-height: 1.5;
+  font-size: 28px;
+}
+.booking input {
+  width: 90%;
+  margin-top: 10px;
+  height: 25px;
+  border: 1px solid #3d1101;
+  border-radius: 10px;
+  padding-left: 15px;
+  font-size: 13px;
+  
+}
+.booking p {
+  margin-top: 15px;
+  font-size: 15px;
+}
+
+.bookingbox {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.leftbooking {
+  width: 45%;
+  text-align: center;
+  margin-right:2.5%;
+  margin-left: 2.5%;
+}
+.rightbooking {
+  width: 45%;
+  margin-right:5%;
+}
+
+
+.booking .radio {
+  max-width: 16px;
+  max-height: 16px;
+  margin :8px 18px 0 6px; 
+}
+@media(max-width: 900px){
+  .leftbooking {
+    width: 60%;
+    /* margin-right:2.5%;
+    margin-left: 2.5%; */
+  }
+  .rightbooking {
+    width: 50%;
+    margin-right:0%;
+  }
+}
+@media (max-width: 625px) {
+  .leftbooking iframe{
+    width: 100%;
+  }
+  .rightbooking {
+    width: 70%;
+
+  }
+}
+
+.send {
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-around;
+}
+.send button {
+  width: 150px;
+  height: 35px;
+  border-radius: 10px;
+  background-color:rgb(159, 143, 143);
+  color: rgb(92, 50, 50);
+  font-size: 18px;
+}
+
+.footer {
+  max-width: 100%;
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  background-color: rgb(194, 113, 113);
+  color: rgba(255, 255, 255, 0.845);
+}
+.footer h2 {
+  font-size: 26px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: rgba(244, 179, 69, 0.845);
+}
+.leftfooter{
+  width: 30%;
+  line-height: 1.2;
+}
+.centerfooter{
+  width: 25%;
+  margin-left: 5%;
+}
+.centerfooter ul li {
+  margin-top: 10px;
+}
+.rightfooter{
+  width: 30%;
+  margin-right: 3%;
+}
+.rightfooter h1 {
+  font-size: 50px;
+  margin-bottom: 30px;
+  text-align: right;
+}
+.media {
+  display: flex;
+  justify-content: flex-end;
+}
+.media img {
+  max-height: 35px;
+  max-width: 35px;
+  padding-left: 20px;
+}
+
+@media (max-width: 767px) {
+  .leftfooter {
+    width: 80%;
+  }
+  .centerfooter{
+    width: 80%;
+    margin-left: 0;
+    margin-top: 50px;
+  }
+  .rightfooter {
+    width: 80%;
+    margin-top: 50px;
+    margin-right: 0;
+  }
+  .rightfooter h1 {
+    text-align: left;
+  }
+  .media{
+    justify-content: flex-start;
+  }
+  .media img{
+    justify-content: flex-start;
+    padding-left: 0;
+    padding-right: 20px;
+  }
+}
+
+/* @media (max-width: 568px) {
+  
+} */
