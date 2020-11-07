@@ -9,7 +9,9 @@
   <meta property="og:url" content="網址">
   <meta property="og:image" content="要顯示的縮圖網址">
   <meta property="og:description" content="網頁描述" >
+  <script src="https://kit.fontawesome.com/1e8475d77d.js" crossorigin="anonymous"></script>
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <link rel="stylesheet" href="css\all.css"> 
   <!-- <script src="js\all.js"></script> -->
 </head>
@@ -17,17 +19,23 @@
   <div class="wrap">
     <div class="header">
         <div class="logo">
-          <a href="">美食餐廳</a>
+          <a href="index.html">美食餐廳</a>
         </div>
 
         <ul class="menu">
-          <li>特色</li>
-          <li>活動</li>
-          <li>課程</li>
-          <li>地圖</li>
-          <li>登入</li>
-          <li>註冊</li>
+          <li><a href="#special">特色</a></li>
+          <li><a href="#chef">主廚</a></li>
+          <li><a href="">課程</a></li>
+          <li><a href="#map">地圖</a></li>
+          <li><a href="login.html">登入</a></li>
+          <li><a href="register.html">註冊</a></li>
         </ul>
+
+        <div class="menu-mobile">
+          <a href="#">
+            <i class="fas fa-bars"></i>
+          </a>
+        </div>
     </div>
 
     <div class="banner">
@@ -40,7 +48,7 @@
       </div>
     </div>
 
-    <div class="context">
+    <div class="context" id="special">
       <div class="question">
         <h2>
           顧客總是在問
@@ -69,7 +77,7 @@
         </ul>
       </div>
 
-      <div class="introduct">
+      <div class="introduct" id="chef">
         <div class="leftbox">
           <img src="img/chef.jpg" alt="">
         </div>
@@ -80,7 +88,7 @@
         </div>
       </div>
 
-      <div class="booking">
+      <div class="booking" id="map">
         <h2>
           使用預約服務
           <br>

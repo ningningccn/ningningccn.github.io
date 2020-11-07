@@ -69,10 +69,35 @@ img{
 .menu {
   display: flex;
 }
+.menu a {
+  color:#fff;
+  text-decoration:none;
+}
 .menu li{
   padding-right: 30px;
   color: white;
   font-size: 16px;
+}
+.menu-mobile {
+  display: none;
+}
+@media(max-width:568px){
+  .menu-mobile {
+    display:block
+  }
+  .menu-mobile a{
+    margin-right: 20px;
+    font-size: 28px;
+    color: #fff;
+  }
+  .logo a {
+    font-size: 25px;
+    padding-left: 30px;
+  }
+
+  .menu {
+    display: none;
+  }
 }
 .banner {
   width: 100%;
@@ -103,6 +128,10 @@ img{
   background-color: rgb(240, 221, 221);
   /* padding-bottom: 30px; */
 }
+
+
+
+
 .question{
   max-width: 100%;
   height: 100px;
@@ -147,7 +176,6 @@ img{
     margin: 20px 5%;
   }
 }
-
 .feature p {
   margin-top: 10px;
 }
@@ -224,6 +252,7 @@ img{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding-bottom: 30px;
 }
 .leftbooking {
   width: 45%;
@@ -279,7 +308,6 @@ img{
 
 .footer {
   max-width: 100%;
-  margin-top: 30px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
