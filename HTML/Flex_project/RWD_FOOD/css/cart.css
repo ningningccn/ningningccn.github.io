@@ -1,0 +1,163 @@
+
+.context {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 50px;
+  justify-content: flex-start;
+  padding-bottom: 50px;
+}
+.shop-left{
+  width: 20%;
+  margin-left: 5%;
+}
+.shop-left h3{
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+.shop-left li{
+  color: #3D1101;
+  padding: 0 9px;
+  line-height: 35px;
+  border-bottom: 1px solid #3D1101;
+
+}
+
+.shop-left li a{
+  display: block;
+  color: #3D1101;
+  text-decoration: none;
+
+}
+.shop-left li:hover{
+  background: #3D1101;
+}
+.shop-left li a:hover{
+  background: #3D1101;
+  color: #fff;
+
+}
+
+.shop-right{
+  width: 70%;
+}
+.product-top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10px;
+}
+.search {
+  display: flex;
+  width: 66.666%;
+}
+.txt-search{
+  width: 60%;
+  height: 35px;
+  padding: 2px 8px;
+  border: 3px solid #3D1101;
+  background-color: #EFE9E7;
+  border-radius: 0;
+}
+.btn-search{
+  height: 35px;
+  width: 35px;
+  border: none;
+  background-color: #3D1101;
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  padding: 0;
+}
+.shopping-car {
+  margin-right: 5%;
+  display: flex;
+  align-items: center;
+  font-size: 18px;  
+}
+.shopping-car a{
+  color:black;
+  text-decoration: none;
+}
+.product-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%; 
+}
+.product {
+  width: 33.3333%;
+  padding: 10px;
+  text-align: center;
+  position: relative;
+}
+.product-padding{
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);;
+}
+.love {
+  position: absolute;
+  font-size: 20px;
+  color: white;
+  z-index: 1;
+  top: 10px;
+  left: 10px;
+  color: #fff;
+  padding: 3px;
+  border-radius: 5px;
+}
+.love a {
+  color: red;
+}
+.txt {
+  font-size: 24px;
+  font-weight: 400;
+  margin-top: 20px;
+}
+.txt h5{
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 2px;
+}
+.txt hr{
+  width: 80%;
+  color: black;
+}
+.price{
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 45px;
+  font-style: italic;
+}
+.button{
+  width: 95%;
+  height: 26px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  
+  border:2px solid black;
+  border-radius: 3px;
+  text-decoration:none;
+}
+
+@media (max-width:767px) {
+  /* .product{
+    width:%;
+  } */
+  .shop-left{
+    width: 90%;
+  }
+  .shop-right{
+    width: 90%;
+    margin-top: 20px;
+    margin-left: 5%;
+  }
+  .product{
+    margin-top: 20px;
+    width: 50%;
+  }
+}
+@media (max-width:568px) {
+  /* .product{
+    width: 80%;
+  } */
+}

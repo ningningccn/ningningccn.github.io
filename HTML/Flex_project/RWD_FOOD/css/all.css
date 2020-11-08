@@ -50,15 +50,18 @@ img{
 .wrap {
   max-width:1024px;
   margin: auto;
+  position: relative;
 }
 
 .header {
   background-color:black;
-  max-width: 100%;
-  height: 70px;
+  position: absolute;
+  width: 100%;
+  height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: rgba(0, 0, 0, 0.75);
 }
 .logo a{
   color: white;
@@ -101,8 +104,8 @@ img{
 }
 .banner {
   width: 100%;
-  height: 420px;
-  background-image: url(../img/banner.jpeg);
+  height: 450px;
+  background-image: url(../img/bookbanner.jpeg);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -125,7 +128,7 @@ img{
   margin-top: 10px;
 }
 .context {
-  background-color: rgb(240, 221, 221);
+  background-color: rgb(211, 229, 242);
   /* padding-bottom: 30px; */
 }
 
@@ -271,7 +274,7 @@ img{
   max-height: 16px;
   margin :8px 18px 0 6px; 
 }
-@media(max-width: 900px){
+@media(max-width: 970px){
   .leftbooking {
     width: 60%;
     /* margin-right:2.5%;
@@ -313,7 +316,7 @@ img{
   justify-content: center;
   padding-bottom: 50px;
   padding-top: 50px;
-  background-color: rgb(194, 113, 113);
+  background-color: rgba(116, 30, 11, 0.666);
   color: rgba(255, 255, 255, 0.845);
 }
 .footer h2 {
