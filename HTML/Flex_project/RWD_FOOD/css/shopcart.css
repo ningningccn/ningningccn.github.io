@@ -1,0 +1,140 @@
+.step{
+  padding-top: 50px;
+  line-height: 50px;
+  text-align: center;
+  
+}
+.step i{
+  font-size: 30px;
+  vertical-align: middle;
+}
+.step .fa{
+  margin: 0 10px ;
+}
+span{
+  font-size: 14px;
+}
+
+.carttable{
+  width: 80%;
+  margin: 0 auto ;
+  background: rgba(255, 87, 165, 0.619);
+  box-shadow: 3px 3px 4px 0px rgba(0,0,0,0.16);
+}
+.rwd-table {
+  width: 100%;
+  margin-top: 20px;
+
+}
+.rwd-table th {
+  border-top :3px solid rgba(0, 0, 0, 0.591);
+  border-bottom :3px solid rgba(0, 0, 0, 0.591);
+  padding: 10px 5px;
+}
+.t1 {
+  width: 65%;
+  text-align: center;
+}
+.t2 {
+  width: 15%;
+  text-align: center;
+}
+.t3 {
+  width: 10%;
+  text-align: center;
+}
+.t4 {
+  width: 10%;
+  text-align: center;
+}
+
+.rwd-table td {
+  padding: 10px 50px ;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.386);
+  font-weight: bold;
+}
+.position {
+  text-align: center; 
+}
+.total{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.tabset{
+  margin: 10px;
+}
+.tabset tr{
+  display: block;
+  padding: 10px;
+}
+.total-money{
+  border-top: 1px solid #000;
+}
+.space {
+  padding-left: 20px;
+}
+.money{
+  border-bottom: 1px solid #000;
+}
+.footer{
+  margin-top: 50px;
+}
+
+@media (max-width:767px) {
+  .step span{
+    display:none;
+  }
+}
+
+@media (max-width:640px) {
+  .table {
+		padding:10px;
+	}
+	.rwd-table th {
+		display: none;
+		text-align: left;
+	}
+	.rwd-table td {
+		display: block;
+		text-align: left;
+	}
+	.rwd-table td:before {
+		content: attr(data-th) " ";
+		float: left;
+		font-weight: bold;
+		width: 95px;
+		margin-right: 20px;
+		font-style: normal;
+		text-align: left;
+		font-size: 16px;
+	}
+	.rwd-table td:last-child {
+		border-bottom: none;
+	}
+	.rwd-table tbody tr:first-child {
+		display: none;
+	}
+	.rwd-table tbody tr {
+		display: block;
+		padding-bottom: 10px;
+		margin-bottom: 10px;
+		border-bottom: 3px solid #FF5E45;
+	}
+	.rwd-table tbody tr:last-child{
+		display: block;
+		padding-bottom: 10px;
+		margin-bottom: 10px;
+		border-bottom: none;
+	}
+	/* .rwd-table tr:hover{
+		background-color: rgba(255,255,255,.0);
+	} */
+	/* .spcing:before{
+		letter-spacing: 31px;
+
+	} */
+}
+
+
+
