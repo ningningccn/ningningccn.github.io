@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-   <a href="#" @click.prevent="signout">登出</a>
+  <a href="#" @click.prevent="signout">登出</a>
   </div>
 </template>
 

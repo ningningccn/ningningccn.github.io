@@ -26,6 +26,7 @@ export default new VueRouter({
       path:'/admin',
       name:'dashboard',
       component:Dashboard,
+      meta: { requiresAuth : true},
       children:[
         {
           path:'products',

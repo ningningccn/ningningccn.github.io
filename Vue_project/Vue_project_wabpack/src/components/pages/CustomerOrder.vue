@@ -8,7 +8,7 @@
           </div>
           <div class="card-body">
             <span class="badge badge-secondary float-right ml-2">{{ item.category }}</span>
-            <h5 class="card-title">
+            <h5 class="card-title" >
               <a href="#" class="text-dark">{{ item.title }}</a>
             </h5>
             <p class="card-text">{{ item.content }}</p>
@@ -19,7 +19,8 @@
             </div>
           </div>
           <div class="card-footer d-flex">
-            <button type="button" class="btn btn-outline-secondary btn-sm" @click.prevent="getOnceProduct(item.id)">
+            <button type="button" class="btn btn-outline-secondary btn-sm"
+            @click.prevent="getOnceProduct(item.id)">
               <i class="fas fa-spinner fa-spin" v-if="status.loadingItem === item.id"></i>
               查看更多
             </button>
@@ -32,12 +33,12 @@
       </div>
     </div>
 
-    <div class="modal fade" id="productModal" tabindex="-1" role="dialog"
+    <!-- <div class="modal fade" id="productModal" tabindex="-1" role="dialog"
       aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">{{ OnceProduct.title }}</h5>
+            <h5 class="modal-title" id="exampleModalLabel">{{  }}</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -61,18 +62,19 @@
           </div>
           <div class="modal-footer">
             <div class="text-muted text-nowrap mr-3">
-              小計 <strong>{{ OnceProduct.num * OnceProduct.price }}</strong> 元
+              小計 <strong>{{ OnceProduct.num * OnceProduct.price }},{{OnceProduct.num }} </strong> 元
             </div>
             <button type="button" class="btn btn-primary"
-              @click="addtoCart(OnceProduct.id, OnceProduct.num)">
+              @click="addtoCart(OnceProduct.id, OnceProduct.num)"> -->
             
               <!-- <i class="fas fa-spinner fa-spin" v-if="OnceProduct.id === status.loadingItem"></i> -->
-              加到購物車
-            </button>
+
+              <!-- 加到購物車 -->
+            <!-- </button>
           </div>
         </div>
       </div>
-    </div>
+    </div>  -->
 
     <!-- 購物車 -->
     <table class="table mt-4">
@@ -203,15 +205,22 @@ export default {
       });
     },
     getOnceProduct(id) {
-      const api = `${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/product/${id}`
+      console.log(id);
+      const api = `${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/product/${id}`;
+      console.log(api);
       const vm =this ;
-      vm.status.loadingItem = id;
+      // vm.status.loadingItem = id;
       console.log('AAAAAAA')
       this.$http.get(api).then((response)=>{
-        vm.OnceProduct = response.data.product;
-        console.log(vm.OnceProduct);
-        $('#productModal').modal('show');
-        vm.status.loadingItem = '';
+        if(response.success){
+          console.log(response.data)
+          vm.OnceProduct = response.data.product;
+          console.log(vm.OnceProduct);
+          $('#productModal').modal('show');
+        } else {
+          console.log('沒啟用')
+        }
+        // vm.status.loadingItem = '';
       });
     },
     addtoCart(id , qty =1) {
@@ -237,7 +246,8 @@ export default {
       });
     },
     delCartProduct(id) {
-      const api = `${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/cart/${id}`
+      const api = `${process.env.APIPATH}/api/${process.env.CUSTOMPAT}/cart/${id}`
+      console.log(api)
       const vm = this;
       this.$http.delete(api).then((response)=>{
         console.log(response);
